@@ -1,3 +1,10 @@
+# Apple's Fork
+**Note: **
+This fork has been modified so that only items of type Gun, Melee or Throwable will have their icons exported. Used for a custom Killfeed plugin.
+
+See Paradox's original code [here.](https://github.com/Paradox304/ParadoxUnboxingModule)
+As well as his ParadoxUnboxing plugin [over on ImperialPlugins](https://imperialplugins.com/Unturned/Products/ParadoxUnboxing) that it was made for.
+
 # ParadoxUnboxingModule
 **How to use:**
 1. Download the latest release from here https://github.com/Paradox304/ParadoxUnboxingModule/releases/tag/1.0

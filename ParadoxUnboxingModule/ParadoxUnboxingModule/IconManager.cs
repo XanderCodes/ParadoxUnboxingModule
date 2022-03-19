@@ -21,13 +21,18 @@ namespace ParadoxUnboxingModule
         {
             var assets = Assets.find(EAssetType.ITEM).Cast<ItemAsset>().ToList();
 
+            ChatManager.serverSendMessage("Starting icon export!", Color.cyan, null, null, EChatMode.GLOBAL, null, true);
+
             foreach (ItemAsset asset in assets)
             {
-                var ready = new ItemIconReady((icon) =>
+                if (asset.useable == "Gun" | asset.useable == "Melee" | asset.useable == "Throwable")
                 {
-                    AddUnturnedIcon(asset.id, icon.EncodeToPNG());
-                });
-                ItemTool.getIcon(asset.id, 0, asset.quality, asset.getState(), asset, null, string.Empty, string.Empty, asset.size_x * 250, asset.size_y * 250, false, true, ready);
+                    var ready = new ItemIconReady((icon) =>
+                    {
+                        AddUnturnedIcon(asset.id, icon.EncodeToPNG());
+                    });
+                    ItemTool.getIcon(asset.id, 0, asset.quality, asset.getState(), asset, null, string.Empty, string.Empty, asset.size_x * 250, asset.size_y * 250, false, true, ready);
+                }
             }
         }
 
